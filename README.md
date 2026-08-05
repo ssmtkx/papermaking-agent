@@ -64,7 +64,7 @@
 
 ```bash
 # 1. 克隆项目
-git clone <repo-url> && cd paper_agent
+git clone https://github.com/ssmtkx/paper_agent.git && cd paper_agent
 
 # 2. 安装依赖
 pip install -r requirements.txt
