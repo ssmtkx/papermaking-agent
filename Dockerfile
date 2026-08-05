@@ -3,12 +3,12 @@
 #
 #  Build:   docker compose build
 #  Run:     docker compose up -d
-#  Shell:   docker compose exec paper-agent bash
+#  Shell:   docker compose exec papermaking-agent bash
 # ─────────────────────────────────────────────────────────────
 
 FROM python:3.10-slim-bookworm
 
-LABEL org.opencontainers.image.title="paper-agent"
+LABEL org.opencontainers.image.title="papermaking-agent"
 LABEL org.opencontainers.image.description="造纸智能助手 — RAG + Agent 垂直问答系统"
 LABEL org.opencontainers.image.version="0.3.0"
 

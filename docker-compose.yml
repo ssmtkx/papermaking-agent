@@ -9,10 +9,10 @@
 version: "3.9"
 
 services:
-  paper-agent:
+  papermaking-agent:
     build: .
-    image: paper-agent:latest
-    container_name: paper-agent
+    image: papermaking-agent:latest
+    container_name: papermaking-agent
     restart: unless-stopped
 
     ports:
@@ -47,6 +47,6 @@ services:
 
 volumes:
   model_cache:
-    name: paper_agent_models
+    name: papermaking_agent_models
   chroma_data:
-    name: paper_agent_chroma
+    name: papermaking_agent_chroma

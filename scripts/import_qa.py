@@ -1,4 +1,4 @@
-"""将 Q&A 对载入 paper_agent 知识库
+"""将 Q&A 对载入 papermaking-agent 知识库
 
 Usage::
 

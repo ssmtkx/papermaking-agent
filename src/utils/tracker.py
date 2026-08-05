@@ -25,7 +25,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-logger = logging.getLogger("paper_agent.tracker")
+logger = logging.getLogger("papermaking_agent.tracker")
 
 # ── DeepSeek pricing (CNY per 1M tokens) ──
 # deepseek-v4-flash: CNY2 / CNY8 (input / output)

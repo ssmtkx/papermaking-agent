@@ -64,7 +64,7 @@
 
 ```bash
 # 1. 克隆项目
-git clone https://github.com/ssmtkx/paper_agent.git && cd paper_agent
+git clone https://github.com/ssmtkx/papermaking-agent.git && cd papermaking-agent
 
 # 2. 安装依赖
 pip install -r requirements.txt
@@ -136,7 +136,7 @@ python run_agent.py
 ## 📁 项目结构
 
 ```
-paper_agent/
+papermaking-agent/
 ├── app.py                  # Streamlit Web 应用
 ├── run.py                  # CLI — 简单 RAG 模式
 ├── run_agent.py            # CLI — ReAct Agent 模式
