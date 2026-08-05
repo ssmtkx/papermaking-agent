@@ -208,7 +208,7 @@ papermaking-agent/
 
 | 层次 | 技术 | 说明 |
 |------|------|------|
-| **LLM** | DeepSeek-V3 | 高性价比，OpenAI 兼容 API |
+| **LLM** | DeepSeek-V4 | 高性价比，OpenAI 兼容 API |
 | **Embedding** | BAAI/bge-small-zh-v1.5 | 中文语义向量，本地 CPU 推理 |
 | **Reranker** | BAAI/bge-reranker-v2-m3 | CrossEncoder 精排 |
 | **向量库** | ChromaDB | 轻量级，嵌入式部署 |
