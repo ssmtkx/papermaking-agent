@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# Environment (API keys — mount separately)
+.env
+
+# Vector DB
+chroma_db/
+
+# Data (mount separately)
+data/raw/
+data/processed/
+
+# Model cache (mount as volume)
+.cache/
+
+# IDE
+.vscode/
+.idea/
+.git/
+
+# OS
+.DS_Store
+Thumbs.db
+*.log
+
+# Git
+.gitignore
+.gitattributes
+
+# Docs (not needed at runtime)
+docs/
+
+# Test / eval scripts (not needed at runtime)
+eval_rag.py
+eval_agent.py
+data/eval_qa.json
+data/agent_eval.json
+data/agent_eval_results.json

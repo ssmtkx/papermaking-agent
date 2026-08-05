@@ -1,0 +1,24 @@
+# Core
+llama-index>=0.10.0
+llama-index-llms-openai-like
+llama-index-embeddings-huggingface
+
+# Embedding & Vector
+chromadb>=0.4.0
+sentence-transformers>=2.2.0
+FlagEmbedding>=1.2.0
+
+# Retrieval
+jieba>=0.42
+
+# Document Parsing
+pdfplumber>=0.10.0
+PyMuPDF>=1.23.0
+
+# Frontend
+streamlit>=1.28.0
+
+# Utils
+python-dotenv>=1.0.0
+openai>=1.0.0
+httpx>=0.25.0

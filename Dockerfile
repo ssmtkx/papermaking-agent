@@ -1,0 +1,51 @@
+# ─────────────────────────────────────────────────────────────
+#  造纸智能助手「小纸」— Docker 镜像
+#
+#  Build:   docker compose build
+#  Run:     docker compose up -d
+#  Shell:   docker compose exec paper-agent bash
+# ─────────────────────────────────────────────────────────────
+
+FROM python:3.10-slim-bookworm
+
+LABEL org.opencontainers.image.title="paper-agent"
+LABEL org.opencontainers.image.description="造纸智能助手 — RAG + Agent 垂直问答系统"
+LABEL org.opencontainers.image.version="0.3.0"
+
+# ── system dependencies ────────────────────────────────────
+# build-essential needed for chromadb's native SQLite extension
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+# ── work directory ─────────────────────────────────────────
+WORKDIR /app
+
+# ── Python packages (layer cached for fast rebuilds) ───────
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt \
+    && pip install --no-cache-dir torch --index-url https://download.pytorch.org/whl/cpu
+
+# ── application code ───────────────────────────────────────
+COPY src/       ./src/
+COPY scripts/   ./scripts/
+COPY app.py run.py run_agent.py ./
+
+# ── environment ────────────────────────────────────────────
+ENV HF_HOME=/app/.cache/huggingface
+ENV HF_ENDPOINT=https://hf-mirror.com
+ENV PYTHONUNBUFFERED=1
+
+# ── Streamlit config ───────────────────────────────────────
+RUN mkdir -p /root/.streamlit
+COPY streamlit.config.toml /root/.streamlit/config.toml
+ENV STREAMLIT_SERVER_HEADLESS=true
+ENV STREAMLIT_SERVER_PORT=8501
+ENV STREAMLIT_BROWSER_GATHER_USAGE_STATS=false
+
+# ── runtime ────────────────────────────────────────────────
+EXPOSE 8501
+
+# Models (BGE-small ~100MB, BGE-reranker ~2.2GB) download on first launch
+# and are persisted via the model_cache Docker volume.
+ENTRYPOINT ["streamlit", "run", "app.py"]

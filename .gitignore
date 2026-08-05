@@ -1,0 +1,40 @@
+# 环境配置（含 API Key）
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# 虚拟环境
+venv/
+env/
+.venv/
+
+# 向量数据库
+chroma_db/
+
+# IDE
+.vscode/
+.idea/
+.claude/
+
+# 数据
+data/raw/
+data/processed/
+data/bm25_index.pkl
+data/api_calls.jsonl
+data/agent_eval_results.json
+
+# 模型缓存
+*.bin
+*.safetensors
+
+# Docker
+*.log
+
+# OS
+.DS_Store
+Thumbs.db

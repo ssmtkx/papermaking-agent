@@ -1,0 +1,52 @@
+# ─────────────────────────────────────────────────────────────
+#  造纸智能助手「小纸」— Docker Compose 编排
+#
+#  启动:  docker compose up -d
+#  停止:  docker compose down
+#  日志:  docker compose logs -f
+# ─────────────────────────────────────────────────────────────
+
+version: "3.9"
+
+services:
+  paper-agent:
+    build: .
+    image: paper-agent:latest
+    container_name: paper-agent
+    restart: unless-stopped
+
+    ports:
+      - "8501:8501"
+
+    # ── API Key (create .env file first) ──
+    env_file:
+      - .env
+
+    environment:
+      - HF_ENDPOINT=${HF_ENDPOINT:-https://hf-mirror.com}
+      - PYTHONUNBUFFERED=1
+      - PYTHONIOENCODING=utf-8
+
+    volumes:
+      # Model cache — survives rebuilds, avoids re-downloading BGE models
+      - model_cache:/app/.cache/huggingface
+
+      # Chroma vector DB — persists indexed knowledge
+      - chroma_data:/app/chroma_db
+
+      # PDF data directory — drop PDFs here and run /index in the app
+      - ./data:/app/data
+
+    # ── resource limits (CPU-only, BGE models ~500MB) ──
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+        reservations:
+          memory: 2G
+
+volumes:
+  model_cache:
+    name: paper_agent_models
+  chroma_data:
+    name: paper_agent_chroma

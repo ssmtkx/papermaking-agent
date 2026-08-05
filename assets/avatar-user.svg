@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <rect x="1" y="1" width="38" height="38" rx="7" fill="#3B5568"/>
+  <rect x="3.5" y="3.5" width="33" height="33" rx="5" fill="none" stroke="#F4EAD6" stroke-width="1"/>
+  <text x="20" y="27.5" font-size="21" font-family="KaiTi, STKaiti, 'Noto Serif SC', serif" fill="#F4EAD6" text-anchor="middle">问</text>
+</svg>
