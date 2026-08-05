@@ -4,7 +4,7 @@
 
 [![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.28+-red.svg)](https://streamlit.io/)
-[![DeepSeek](https://img.shields.io/badge/LLM-DeepSeek--V3-green.svg)](https://www.deepseek.com/)
+[![DeepSeek](https://img.shields.io/badge/LLM-DeepSeek--V4-green.svg)](https://www.deepseek.com/)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 **「小纸」** 是一位 AI 造纸工艺专家，能够回答制浆、抄纸、施胶、涂布、质量控制等专业问题，并自主诊断常见故障，提供分步骤的解决方案。
